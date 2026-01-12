@@ -89,7 +89,7 @@ if [ -d ".git" ]; then
     echo "项目已存在，拉取最新代码..."
     git pull
 else
-    git clone https://github.com/LunaTechLab/MoonTV.git .
+    git clone https://github.com/zuiyuu/MoonTV.git .
 fi
 
 # 7. 安装依赖
