@@ -1,13 +1,10 @@
 /** @type {import('next').NextConfig} */
 /* eslint-disable @typescript-eslint/no-var-requires */
+const path = require('path');
 const nextConfig = {
   output: 'standalone',
-  eslint: {
-    dirs: ['src'],
-  },
 
   reactStrictMode: false,
-  swcMinify: true,
 
   // Uncoment to add domain whitelist
   images: {
@@ -64,11 +61,13 @@ const nextConfig = {
   },
 };
 
-const withPWA = require('next-pwa')({
-  dest: 'public',
-  disable: process.env.NODE_ENV === 'development',
-  register: true,
-  skipWaiting: true,
-});
+// 临时禁用PWA以便快速启动开发服务器
+// const withPWA = require('next-pwa')({
+//   dest: 'public',
+//   disable: process.env.NODE_ENV === 'development',
+//   register: true,
+//   skipWaiting: true,
+// });
 
-module.exports = withPWA(nextConfig);
+// module.exports = withPWA(nextConfig);
+module.exports = nextConfig;
