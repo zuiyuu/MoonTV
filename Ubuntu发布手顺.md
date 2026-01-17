@@ -167,10 +167,10 @@ pnpm install
 pnpm build
 
 # 创建环境变量文件
-cat > .env.production << 'EOF'
+sudo cat > .env.production << 'EOF'
 NODE_ENV=production
-PASSWORD=your_secure_password
-NEXT_PUBLIC_SITE_NAME=MyMoonTV
+PASSWORD=1122
+NEXT_PUBLIC_SITE_NAME=HomeMoonTV
 NEXT_PUBLIC_STORAGE_TYPE=redis
 REDIS_URL=redis://localhost:6379
 NEXT_PUBLIC_ENABLE_REGISTER=false
@@ -189,9 +189,9 @@ After=network.target
 [Service]
 Type=simple
 User=www-data
-WorkingDirectory=/opt/moontv
+WorkingDirectory=/root/MoonTV
 Environment=NODE_ENV=production
-EnvironmentFile=/opt/moontv/.env.production
+EnvironmentFile=/root/MoonTV/.env.production
 ExecStart=/usr/bin/pnpm start
 Restart=always
 RestartSec=10
@@ -201,7 +201,7 @@ WantedBy=multi-user.target
 EOF
 
 # 设置权限
-sudo chown -R www-data:www-data /opt/moontv
+sudo chown -R www-data:www-data /root/MoonTV
 
 # 启动服务
 sudo systemctl daemon-reload
