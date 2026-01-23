@@ -5,6 +5,10 @@
 
 echo "🚀 设置 MoonTV 自动重启..."
 
+# 加载 nvm（如果存在）
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
 # 检查是否安装了 Node.js 和 pnpm
 if ! command -v node &> /dev/null || ! command -v pnpm &> /dev/null; then
     echo "错误: 需要先安装 Node.js 和 pnpm"
