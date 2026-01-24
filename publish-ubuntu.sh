@@ -60,7 +60,7 @@ After=network.target
 
 [Service]
 Type=simple
-User=www-data
+User=homeserver
 WorkingDirectory=$(pwd)
 Environment=NODE_ENV=production
 EnvironmentFile=$(pwd)/.env.production
@@ -74,7 +74,7 @@ EOF
 
 # 7. 设置权限
 echo -e "${GREEN}7. 设置权限...${NC}"
-chown -R www-data:www-data $(pwd)
+chown -R homeserver:homeserver $(pwd)
 
 # 8. 启动服务
 echo -e "${GREEN}8. 启动服务...${NC}"

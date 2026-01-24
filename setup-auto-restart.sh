@@ -20,6 +20,8 @@ fi
 if ! command -v pm2 &> /dev/null; then
     echo "安装 PM2..."
     npm install -g pm2
+    # 确保 PATH 包含 npm 全局 bin 目录
+    export PATH="$(npm config get prefix)/bin:$PATH"
 fi
 
 # 确保项目依赖已安装
